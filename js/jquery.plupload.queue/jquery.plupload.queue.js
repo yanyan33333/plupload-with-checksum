@@ -291,6 +291,8 @@
 
 				uploader.bind('FilesAdded', function(up, files){
 					var files_hash=[];
+
+					/***************code form https://md5file.com/calculator*********************/
 					function hash_file(file, worker) {
 						var i, buffer_size, block, threads, reader, blob, handle_hash_block, handle_load_block;
 					 	
@@ -303,7 +305,7 @@
 					 			});
 					 		
 					 	};
-					 	//如果文件被拆分继续对剩下的块计算Hash
+					 	//if the file is out of buffer size ,hash the left block
 					 	handle_hash_block = function(event) {
 					 		threads -= 1;
 					 		if (threads === 0) {
@@ -323,7 +325,7 @@
 					 			}
 					 		}
 					 	};
-					 	//文件分块大小
+					 	//buffer size
 					 	buffer_size = 64 * 16 * 1024;
 
 					 	block = {
@@ -384,6 +386,8 @@
 
 					 	}
 					}
+
+	/***************code form https://md5file.com/calculator*********************/
 
 					function send_to_server(){
 						$.ajax({
