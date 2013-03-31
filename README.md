@@ -3,7 +3,7 @@ plupload-with-checksum
 
 It can do checksum before file to be uploaded
 
-You can open example/html5.html to test it 
+You can open examples/html5.html to test it 
 
 Some code from https://md5file.com/calculator 
 
